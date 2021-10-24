@@ -4,6 +4,7 @@ using System.Text;
 
 namespace FindMax
 {
+    //used two different methods to find maximum number
     class MaxNumbers
     {
         int[] intNums = { 10, 30, 20 };
@@ -28,6 +29,22 @@ namespace FindMax
             {
                 Console.WriteLine(intNums[i]);
             }
+        }
+        public static double MaximumFloatNumber(double firstValue, double secondValue, double thirdValue)
+        {
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
+            {
+                return firstValue;
+            }
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
+            {
+                return secondValue;
+            }
+            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
+            {
+                return thirdValue;
+            }
+            throw new Exception("firstNumber,secondNumber and thirdNumber are same");
         }
     }
 }
